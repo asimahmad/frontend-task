@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import {auth} from '../database/FirebaseConfig'
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 export default function SignUp() {
 
@@ -49,6 +49,7 @@ export default function SignUp() {
       <input className='input' type='password' placeholder='Password' onChange={e=>setUser(prev=>({...prev, password: e.target.value}))}/>
       <b>{errorMsg}</b><br/>
       <button className='submit' disabled={submitButtonDisabled} onClick={handleSubmit}>Submit</button>
+      <p className='sign-up'><Link  to='/login'>Login</Link></p>
     </div>
   )
 }
