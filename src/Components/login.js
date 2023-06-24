@@ -11,6 +11,14 @@ const Login = () =>{
         email:'',
         password:'',
     })
+    useEffect(()=>{
+        auth.onAuthStateChanged(user=>{
+            if(user){
+                navigate('/home')
+                return
+            }
+        })
+    },[])
     function handleLogin(){
         if(!user.email || !user.password){
             setErrorMsg('All fields are required!!')

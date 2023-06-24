@@ -16,7 +16,7 @@ export const appRouter = createBrowserRouter([
     children:[
       {
         path:'/',
-        element:<Suspense fallback={<Shimmer/>}><Home/></Suspense>,
+        element:<Login/>,
         errorElement: <Error />,
       },
       {

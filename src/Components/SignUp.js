@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {createUserWithEmailAndPassword, updateProfile} from 'firebase/auth';
 import {auth} from '../database/FirebaseConfig'
 import {Link, useNavigate} from 'react-router-dom'
@@ -13,6 +13,14 @@ export default function SignUp() {
         email:'',
         password:'',
     })
+    useEffect(()=>{
+        auth.onAuthStateChanged(user=>{
+            if(user){
+                navigate('/home')
+                return
+            }
+        })
+    },[])
     function handleSubmit(){
         if(!user.name || !user.email || !user.password){
             setErrorMsg('All fields are required!!')
@@ -40,7 +48,7 @@ export default function SignUp() {
             setErrorMsg(err.message)
             console.log(err.message)
         })
-        console.log(user);
+        //console.log(user);
     }
   return (
     <div className='form'>
