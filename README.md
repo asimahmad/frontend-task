@@ -32,6 +32,7 @@
     - Shimmer effect: It also has shimmer effect when the data is getting loaded, it will be in the work state.
     -Erorr: This component is used when user uses any wrong string in the url.
     - Infinite scrolling: This is basically used for the API data, and it works when when scroll down in the last then again it loads the data.
+    -Add Allow CORS extention to the browser: https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf
     - The project is already hosted to firebase: [website url](https://frontend-task-a229a.web.app/)
 
 
